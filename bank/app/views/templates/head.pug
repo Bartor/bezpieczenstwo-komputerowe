@@ -1,4 +1,17 @@
+doctype html
+
 head
-    link(rel='stylesheet', href = '/static/stylesheets/index.css')
-    link(rel='stylesheet', href = 'https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz&display=swap')
     title= title
+    block links
+        link(rel='stylesheet', href = '/static/stylesheets/main.css')
+        link(rel='stylesheet', href = '/static/stylesheets/header.css')
+        link(rel='stylesheet', href = 'https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz&display=swap')
+    block scripts
+body
+    nav
+        a(href='/') Banco
+            span Epico
+        div
+            each link in navLinks
+                a(href=link.url).link #{link.description}
+    block content

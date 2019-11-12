@@ -1,0 +1,25 @@
+extends templates/head
+
+block append links
+    link(rel='stylesheet' href='/static/stylesheets/login.css')
+
+block append scripts
+    script(src='/static/js/register.js')
+
+block content
+    main
+        header
+            h1 Register
+        form#registerForm
+            label(for='email') First name:
+            input(type='text' required=true)#firstName
+            label(for='email') Second name:
+            input(type='text' required=true)#secondName
+            label(for='email') Email:
+            input(type='email' required=true)#email
+            label(for='password') Password:
+            input(type='password' required=true)#password
+            label(for='password') Repeat password:
+            input(type='password' required=true)#repeatPassword
+            .half
+                button(type='submit') Register

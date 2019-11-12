@@ -1,0 +1,62 @@
+:root {
+    --accent: #08c552;
+    --accent-dark: #087136;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #222222;
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+a:visited {
+    color: white;
+}
+
+a.link, button {
+    border: 0;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    transition: color,background-color 0.1s;
+}
+
+a.link:hover, button:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: var(--accent-dark);
+}
+
+input {
+    padding: 12px;
+    border: 0;
+}
+
+.accent {
+    color: var(--accent);
+}

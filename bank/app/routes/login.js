@@ -8,15 +8,15 @@ module.exports = (router, config) => {
     });
 
     router.get('/', (req, res) => {
-        res.render('index', {
-            title: 'Hello!',
+        res.render('login', {
+            title: 'Login - Banco Epico',
             navLinks: config.navLinks(req.authentication.passed)
         });
     });
 
     router.get('/register', (req, res) => {
-        res.render('index', {
-            title: 'Hello!',
+        res.render('register', {
+            title: 'Register - Banco Epico',
             navLinks: config.navLinks(req.authentication.passed)
         });
     });

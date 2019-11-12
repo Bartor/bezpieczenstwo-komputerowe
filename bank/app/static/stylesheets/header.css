@@ -1,0 +1,25 @@
+nav {
+    width: 66%;
+    padding: 24px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    font-size: 4em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+nav > div > a {
+    margin: 12px;
+}
+
+nav > a > span {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--accent);
+}

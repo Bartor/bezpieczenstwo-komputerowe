@@ -2,31 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3595eaa1-046c-482b-a57f-a83c7ef0429d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/db_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/account.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/scripts/Authenticator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/index.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/login.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/templates/head.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/templates/header.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/brajczyk.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/register.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sequelize.js" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/appConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20191111185806-create-user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/templates/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/templates/head.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/templates/header.pug" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,8 +100,16 @@
       <option name="presentableId" value="Default" />
       <updated>1573496803285</updated>
       <workItem from="1573496804361" duration="1987000" />
-      <workItem from="1573548296692" duration="10530000" />
+      <workItem from="1573548296692" duration="15960000" />
     </task>
+    <task id="LOCAL-00001" summary="podstawowa struktura projektu">
+      <created>1573558945700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573558945700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="podstawowa struktura projektu" />
+    <option name="LAST_COMMIT_MESSAGE" value="podstawowa struktura projektu" />
   </component>
 </project>

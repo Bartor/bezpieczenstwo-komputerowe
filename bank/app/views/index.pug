@@ -1,5 +1,9 @@
-doctype html
-include templates/head
-body
-    include templates/header
-    p hello #{title}
+extends templates/head
+block append links
+    link(rel='stylesheet' href='/static/stylesheets/index.css')
+
+block content
+    main
+        header
+            h1 Most secure banking solution
+            h1.accent on the Internet.

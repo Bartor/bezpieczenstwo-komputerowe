@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    padding-inline-end: 24px;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+}
+
+.half {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.half > button {
+    flex-grow: 1;
+}
+
+.half > a {
+    margin-left: 24px;
+}
+
+input {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
