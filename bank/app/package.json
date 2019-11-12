@@ -2,16 +2,20 @@
   "name": "bank",
   "version": "1.0.0",
   "description": "A banking app for uni project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:prod": "NODE_ENV=production node server.js"
   },
   "author": "Bartosz Barnaba Rajczyk",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
-    "mysql2": "^2.0.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
     "pug": "^2.0.4",
     "sequelize": "^5.21.2",
     "sequelize-cli": "^5.5.1"
