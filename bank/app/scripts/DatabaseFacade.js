@@ -22,6 +22,7 @@ class DatabaseFacade {
                 where: {
                     id: id
                 }
+                //todo don't return users here, check hash with salt
             }).then(users => resolve(users)).catch(err => reject(err));
         }));
     }
