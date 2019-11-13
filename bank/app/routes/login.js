@@ -21,5 +21,9 @@ module.exports = (router, config) => {
         });
     });
 
+    router.post('/register', (req, res) => {
+
+    });
+
     return router;
 };

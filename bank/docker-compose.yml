@@ -3,7 +3,7 @@ services:
 
   express:
     build: .
-    command: npm start
+    command: bash ./waitforit.sh postgres:5432 -- npm start
     ports:
       - "80:80"
       - "443:443"

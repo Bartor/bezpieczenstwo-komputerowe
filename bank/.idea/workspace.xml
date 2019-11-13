@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3595eaa1-046c-482b-a57f-a83c7ef0429d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/brajczyk.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/register.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/waitforit.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/templates/head.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/header.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../www-uczelnia" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -63,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank\app\static\js" />
       <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank" />
       <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank\app" />
     </key>
@@ -100,7 +94,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573496803285</updated>
       <workItem from="1573496804361" duration="1987000" />
-      <workItem from="1573548296692" duration="15960000" />
+      <workItem from="1573548296692" duration="15994000" />
+      <workItem from="1573631251267" duration="114000" />
+      <workItem from="1573640907138" duration="6315000" />
     </task>
     <task id="LOCAL-00001" summary="podstawowa struktura projektu">
       <created>1573558945700</created>
@@ -109,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573558945700</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="podstawy podstron">
+      <created>1573565933911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573565933911</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +123,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -128,6 +133,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="podstawowa struktura projektu" />
-    <option name="LAST_COMMIT_MESSAGE" value="podstawowa struktura projektu" />
+    <MESSAGE value="podstawy podstron" />
+    <option name="LAST_COMMIT_MESSAGE" value="podstawy podstron" />
   </component>
 </project>
