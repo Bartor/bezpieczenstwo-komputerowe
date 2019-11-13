@@ -3,10 +3,12 @@ services:
 
   express:
     build: .
-    command: bash ./waitforit.sh postgres:5432 -- npm start
+    command: npm start
     ports:
       - "80:80"
       - "443:443"
+    depends_on:
+      - postgres
 
   postgres:
     image: postgres:9.5
@@ -17,8 +19,6 @@ services:
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
-    depends_on:
-      - dbadmin
 
   dbadmin:
     image: dpage/pgadmin4
@@ -27,6 +27,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - "81:80"
+    depends_on:
+      - postgres
 
 volumes:
   postgres:
