@@ -5,11 +5,7 @@ class Authenticator {
     }
 
     authenticate(user, timeout) {
-        let token = '';
-        this.crypto.randomBytes(64, (err, buf) => {
-           if (err) throw 'Error when generating token';
-           token = buf.toString(16);
-        });
+        let token = this.crypto.randomFillSync(Buffer.alloc(64)).toString('hex');
         this.authenticated[user] = {
             timestamp: Date.now(),
             timeout: timeout,

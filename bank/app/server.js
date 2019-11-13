@@ -5,13 +5,19 @@ const crypto = require('crypto');
 const http = require('http');
 
 const Authenticator = require('./scripts/Authenticator');
+const DatabaseFacade = require('./scripts/DatabaseFacade');
+
 const config = require('./config/appConfig');
-
-const indexRouter = require('./routes/index')(express.Router(), config);
-const accountRouter = require('./routes/account')(express.Router(), config);
-const loginRouter = require('./routes/login')(express.Router(), config);
-
 const db = require('./models/index');
+
+const data = {
+    config: config,
+    db: new DatabaseFacade(db, crypto)
+};
+
+const indexRouter = require('./routes/index')(express.Router(), data);
+const accountRouter = require('./routes/account')(express.Router(), data);
+const loginRouter = require('./routes/login')(express.Router(), data);
 
 const auth = new Authenticator(crypto);
 const app = express();

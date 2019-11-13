@@ -1,10 +1,13 @@
 'use strict';
+
+const uuidv4 = require('uuid/v4');
 module.exports = (sequelize, DataTypes) => {
     const Transfer = sequelize.define('Transfer', {
         id: {
             type: DataTypes.UUID,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            defaultValue: uuidv4(),
         },
         sender: {
             type: DataTypes.UUID,

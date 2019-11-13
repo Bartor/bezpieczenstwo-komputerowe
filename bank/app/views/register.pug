@@ -12,9 +12,9 @@ block content
             h1 Register
         form#registerForm
             label(for='email') First name:
-            input(type='text' required=true)#firstName
+            input(type='text' required=true pattern='[a-zA-Z]{1,32}')#firstName
             label(for='email') Second name:
-            input(type='text' required=true)#secondName
+            input(type='text' required=true pattern='[a-zA-Z]{1,32}')#lastName
             label(for='email') Email:
             input(type='email' required=true)#email
             label(for='password') Password:
