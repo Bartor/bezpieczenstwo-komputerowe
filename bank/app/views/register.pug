@@ -11,15 +11,15 @@ block content
         header
             h1 Register
         form#registerForm
-            label(for='email') First name:
-            input(type='text' required=true pattern='[a-zA-Z]{1,32}')#firstName
-            label(for='email') Second name:
-            input(type='text' required=true pattern='[a-zA-Z]{1,32}')#lastName
+            label(for='email') Name:
+                input(type='text' required=true pattern='[a-zA-Z]{1,32}')#firstName
+            label(for='email') Surname:
+                input(type='text' required=true pattern='[a-zA-Z]{1,32}')#lastName
             label(for='email') Email:
-            input(type='email' required=true)#email
+                input(type='email' required=true maxlength='64')#email
             label(for='password') Password:
-            input(type='password' required=true)#password
-            label(for='password') Repeat password:
-            input(type='password' required=true)#repeatPassword
-            .half
-                button(type='submit') Register
+                input(type='password' required=true)#password
+            label(for='repeatPassword') Repeat:
+                input(type='password' required=true)#repeatPassword
+            button(type='submit') Register
+        footer

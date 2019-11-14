@@ -14,6 +14,34 @@ module.exports = (router, data) => {
         });
     });
 
+    router.post('/', (req, res) => {
+        const [
+            email,
+            password,
+        ] = [
+            req.body.email ? req.body.email.toLocaleLowerCase() : '',
+            req.body.password || '',
+        ];
+
+        if (!email || !password) {
+            res.status(400).json({error: 'All Fields are required'});
+        }
+
+        data.db.verifyUser(email, password).then(result => {
+            if (result) {
+                const token = data.auth.authenticate(email, data.config.tokenTimeout);
+                res.cookie('token', token);
+                res.cookie('user', email);
+                res.json({token: token, user: email});
+            } else {
+                res.status(401).json({error: 'Wrong credentials'});
+            }
+        }).catch(err => {
+            console.error(err);
+            res.status(500).json({error: 'Internal server error'});
+        });
+    });
+
     router.get('/register', (req, res) => {
         res.render('register', {
             title: 'Register - Banco Epico',
@@ -73,16 +101,18 @@ module.exports = (router, data) => {
             message.errors.push('Password don\'t match');
         }
 
-        console.log(message);
-
         if (message.errors.length === 0) {
             data.db.newUser(firstName, lastName, email, password)
                 .then(user => {
-                    console.log(user);
                     res.json(message);
                 }).catch(error => {
-                console.log(error);
-                res.status(500);
+                if (error.name === 'SequelizeUniqueConstraintError') {
+                    res.status(400);
+                    message.errors.push('This email address is already taken');
+                } else {
+                    res.status(500);
+                }
+                console.error(error);
                 res.json(message);
             });
         } else {

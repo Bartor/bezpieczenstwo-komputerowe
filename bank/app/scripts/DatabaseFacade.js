@@ -16,14 +16,21 @@ class DatabaseFacade {
         });
     }
 
-    findUser(id, password) {
+    verifyUser(email, password) {
         return new Promise(((resolve, reject) => {
             this.db['User'].findAll({
                 where: {
-                    id: id
+                    email: email
                 }
-                //todo don't return users here, check hash with salt
-            }).then(users => resolve(users)).catch(err => reject(err));
+            }).then(users => {
+                if (users.length === 1) {
+                    const foundUser = users[0];
+                    resolve (foundUser.hash === this.crypto.createHash('sha256').update(password + foundUser.salt).digest('hex'));
+                } else {
+                    if (users.length) console.error(`MORE THAN ONE USER WITH ${email} EMAIL`);
+                    resolve(false);
+                }
+            }).catch(err => reject(err));
         }));
     }
 }

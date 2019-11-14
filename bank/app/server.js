@@ -9,17 +9,18 @@ const DatabaseFacade = require('./scripts/DatabaseFacade');
 
 const config = require('./config/appConfig');
 const db = require('./models/index');
+const auth = new Authenticator(crypto);
 
 const data = {
     config: config,
-    db: new DatabaseFacade(db, crypto)
+    db: new DatabaseFacade(db, crypto),
+    auth: auth
 };
 
 const indexRouter = require('./routes/index')(express.Router(), data);
 const accountRouter = require('./routes/account')(express.Router(), data);
 const loginRouter = require('./routes/login')(express.Router(), data);
 
-const auth = new Authenticator(crypto);
 const app = express();
 
 // pug render engine

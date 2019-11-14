@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3595eaa1-046c-482b-a57f-a83c7ef0429d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/static/js/modules/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/appConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/appConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/Authenticator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/Authenticator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scripts/DatabaseFacade.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/DatabaseFacade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/register.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/register.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/templates/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/templates/head.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +34,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="474" />
-    <option name="y" value="-27" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1TVbd3suvFQcXLaqUplaumGBNlV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -50,9 +57,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank\app\static\js" />
       <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank" />
       <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank\app" />
+      <recent name="C:\Users\brajczyk\Documents\GitHub\bezpieczenstwo-komputerowe\bank\app\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -90,7 +97,8 @@
       <workItem from="1573496804361" duration="1987000" />
       <workItem from="1573548296692" duration="15994000" />
       <workItem from="1573631251267" duration="114000" />
-      <workItem from="1573640907138" duration="16037000" />
+      <workItem from="1573640907138" duration="16082000" />
+      <workItem from="1573720574213" duration="11131000" />
     </task>
     <task id="LOCAL-00001" summary="podstawowa struktura projektu">
       <created>1573558945700</created>
@@ -127,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573658962345</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dodano todo">
+      <created>1573659005148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573659005148</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +167,7 @@
     <MESSAGE value="zarys kolumn; początek integracji z bazą" />
     <MESSAGE value="poprawka depends_on compose'a" />
     <MESSAGE value="działające tworzenie konta" />
-    <option name="LAST_COMMIT_MESSAGE" value="działające tworzenie konta" />
+    <MESSAGE value="dodano todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodano todo" />
   </component>
 </project>

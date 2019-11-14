@@ -12,9 +12,9 @@ block content
             h1 Log in
         form#loginForm
             label(for='email') Email:
-            input(type='email' required=true)#email
+                input(type='email' required=true)#email
             label(for='password') Password:
-            input(type='password' required=true)#password
-            .half
-                button(type='submit') Login
-                a(href='/login/remind') Forgot your password?
+                input(type='password' required=true)#password
+            button(type='submit') Login
+            a(href='/login/remind') Forgot your password?
+        footer

@@ -13,5 +13,12 @@ module.exports = (router, data) => {
         });
     });
 
+    router.get('/logout', (req, res) => {
+        data.auth.deauthenticate(req.authentication.user);
+        res.cookie('user', '');
+        res.cookie('token', '');
+        res.redirect('/');
+    });
+
     return router;
 };

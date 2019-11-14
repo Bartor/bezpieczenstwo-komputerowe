@@ -1,4 +1,7 @@
 window.addEventListener('load', () => {
+    const footer = document.querySelector('footer');
+    const notifications = new Notification(footer, 5);
+
     document.getElementById('registerForm').addEventListener('submit', event => {
         event.preventDefault();
 
@@ -6,7 +9,6 @@ window.addEventListener('load', () => {
         for (let element of event.target) {
             response[element.id] = element.value;
         }
-        console.log(response);
 
         fetch('/login/register', {
             method: 'POST',
@@ -14,10 +16,18 @@ window.addEventListener('load', () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(response)
-        }).then(data => {
-            console.log(data);
+        }).then(response => {
+            if (response.status === 200) {
+                notifications.notify('#08c552', 'Account was successfully created', () => {
+                    window.location = '/login';
+                });
+            } else {
+                response.json().then(message => message.errors.forEach(error => {
+                    notifications.notify('#c52337', error);
+                }));
+            }
         }).catch(err => {
-           console.log(err);
+            console.error(err);
         });
     });
 });
