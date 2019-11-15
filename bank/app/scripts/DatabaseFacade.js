@@ -25,13 +25,41 @@ class DatabaseFacade {
             }).then(users => {
                 if (users.length === 1) {
                     const foundUser = users[0];
-                    resolve (foundUser.hash === this.crypto.createHash('sha256').update(password + foundUser.salt).digest('hex'));
+                    if (foundUser.hash === this.crypto.createHash('sha256').update(password + foundUser.salt).digest('hex')) {
+                        resolve(foundUser.id);
+                    } else {
+                        resolve(false);
+                    }
                 } else {
                     if (users.length) console.error(`MORE THAN ONE USER WITH ${email} EMAIL`);
                     resolve(false);
                 }
             }).catch(err => reject(err));
         }));
+    }
+
+    findUserByEmail(email) {
+        return this.db['User'].findAll({
+            where: {
+                email: email
+            }
+        });
+    }
+
+    getUserTransfers(userId) {
+        return this.db['Transfer'].findAll({
+            where: {
+                [db.Sequelize.Op.or]: [{sender: userId}, {receiver: userId}]
+            }
+        });
+    }
+
+    newTransfer(sender, receiver, amount) {
+        return this.db['Transfer'].create({
+            sender: sender,
+            receiver: receiver,
+            amount: amount
+        });
     }
 }
 

@@ -1,0 +1,15 @@
+extends templates/head
+
+block append links
+    link(rel='stylesheet' href='/static/stylesheets/account.css')
+
+block append scripts
+    script(src='/static/js/account.js')
+
+block content
+    main
+        header
+            h1 Log in
+        ul
+            each transfer in transfers
+                li

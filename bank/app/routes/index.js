@@ -1,8 +1,8 @@
-module.exports = (router, data) => {
+module.exports = (router, refs) => {
     router.get('/', (req, res) => {
         res.render('index', {
             title: 'Homepage - Banco Epico',
-            navLinks: data.config.navLinks(req.authentication.passed)
+            navLinks: refs.config.navLinks(req.authentication.passed)
         });
     });
 

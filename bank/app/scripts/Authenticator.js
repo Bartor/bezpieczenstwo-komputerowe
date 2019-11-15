@@ -6,27 +6,36 @@ class Authenticator {
 
     authenticate(user, timeout) {
         let token = this.crypto.randomFillSync(Buffer.alloc(64)).toString('hex');
-        this.authenticated[user] = {
+        while (this.authenticated[token]) {
+            token = this.crypto.randomFillSync(Buffer.alloc(64)).toString('hex');
+        }
+        this.authenticated[token] = {
             timestamp: Date.now(),
-            timeout: timeout*1000,
-            token: token
+            timeout: timeout * 1000,
+            user: user
         };
         return token;
     }
 
-    authorize(user, token) {
-        let storedUser = this.authenticated[user];
+    authorize(token) {
+        let storedUser = this.authenticated[token];
         if (storedUser === undefined) return false;
         if (storedUser.timestamp + storedUser.timeout < Date.now()) {
-            delete this.authenticated[user];
-            return false;
+            delete this.authenticated[token];
+            return {
+                passed: false,
+                user: null
+            };
         } else {
-            return storedUser.token === token;
+            return {
+                passed: true,
+                user: storedUser.user
+            };
         }
     }
 
-    deauthenticate(user) {
-        if (this.authenticated[user]) delete this.authenticated[user];
+    deauthenticate(token) {
+        if (this.authenticated[token]) delete this.authenticated[token];
     }
 }
 

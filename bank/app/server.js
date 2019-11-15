@@ -8,18 +8,18 @@ const Authenticator = require('./scripts/Authenticator');
 const DatabaseFacade = require('./scripts/DatabaseFacade');
 
 const config = require('./config/appConfig');
-const db = require('./models/index');
+const db = new DatabaseFacade(require('./models/index'), crypto);
 const auth = new Authenticator(crypto);
 
-const data = {
+const refs = {
     config: config,
-    db: new DatabaseFacade(db, crypto),
+    db: db,
     auth: auth
 };
 
-const indexRouter = require('./routes/index')(express.Router(), data);
-const accountRouter = require('./routes/account')(express.Router(), data);
-const loginRouter = require('./routes/login')(express.Router(), data);
+const indexRouter = require('./routes/index')(express.Router(), refs);
+const accountRouter = require('./routes/account')(express.Router(), refs);
+const loginRouter = require('./routes/login')(express.Router(), refs);
 
 const app = express();
 
@@ -36,14 +36,10 @@ app.use(cookieParser());
 
 // routers
 app.use((req, res, next) => { // authentication
-    if (req.cookies.token && req.cookies.user) {
-        req.authentication = {
-            user: req.cookies.user,
-            passed: auth.authorize(req.cookies.user, req.cookies.token)
-        };
+    if (req.cookies.token) {
+        req.authentication = auth.authorize(req.cookies.token);
     } else {
         req.authentication = {
-            user: req.cookies.user,
             passed: false
         };
     }
@@ -62,7 +58,7 @@ app.use('/account', accountRouter);
 
 const httpServer = http.createServer(app);
 
-db.sequelize.authenticate()
+refs.db.sequelize.authenticate()
     .then(() => {
         db.sequelize.sync();
         console.log('Connected to database');

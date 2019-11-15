@@ -1,4 +1,4 @@
-module.exports = (router, data) => {
+module.exports = (router, refs) => {
     router.use((req, res, next) => {
         if (req.authentication.passed) {
             res.redirect('/account');
@@ -10,7 +10,7 @@ module.exports = (router, data) => {
     router.get('/', (req, res) => {
         res.render('login', {
             title: 'Login - Banco Epico',
-            navLinks: data.config.navLinks(req.authentication.passed)
+            navLinks: refs.config.navLinks(req.authentication.passed)
         });
     });
 
@@ -27,12 +27,11 @@ module.exports = (router, data) => {
             res.status(400).json({error: 'All Fields are required'});
         }
 
-        data.db.verifyUser(email, password).then(result => {
-            if (result) {
-                const token = data.auth.authenticate(email, data.config.tokenTimeout);
+        refs.db.verifyUser(email, password).then(id => {
+            if (id) {
+                const token = refs.auth.authenticate(id, refs.config.tokenTimeout);
                 res.cookie('token', token);
-                res.cookie('user', email);
-                res.json({token: token, user: email});
+                res.json({token: token});
             } else {
                 res.status(401).json({error: 'Wrong credentials'});
             }
@@ -45,7 +44,7 @@ module.exports = (router, data) => {
     router.get('/register', (req, res) => {
         res.render('register', {
             title: 'Register - Banco Epico',
-            navLinks: data.config.navLinks(req.authentication.passed)
+            navLinks: refs.config.navLinks(req.authentication.passed)
         });
     });
 
@@ -102,7 +101,7 @@ module.exports = (router, data) => {
         }
 
         if (message.errors.length === 0) {
-            data.db.newUser(firstName, lastName, email, password)
+            refs.db.newUser(firstName, lastName, email, password)
                 .then(user => {
                     res.json(message);
                 }).catch(error => {
