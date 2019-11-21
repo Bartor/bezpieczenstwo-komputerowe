@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const footer = document.querySelector('footer');
     const notifications = new Notification(footer, 5);
 
-    document.getElementById('loginForm').addEventListener('submit', event => {
+    document.getElementById('transferForm').addEventListener('submit', event => {
         event.preventDefault();
 
         let response = {};
@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
             response[element.id] = element.value;
         }
 
-        fetch('/login',
+        fetch('/account/transfer',
             {
                 method: 'POST',
                 headers: {
@@ -18,14 +18,14 @@ window.addEventListener('load', () => {
                 },
                 body: JSON.stringify(response)
             }).then(response => {
-                response.json().then(data => {
-                    if (response.status === 200) {
-                        notifications.notify('#08c552', 'Logged in');
-                        setTimeout(() => document.location = '/account', 500);
-                    } else {
-                        notifications.notify('#c52337', data.error);
-                    }
-                });
+            response.json().then(data => {
+                if (response.status === 200) {
+                    notifications.notify('#08c552', 'Transfer successful');
+                    setTimeout(() => window.location = `/account/transfer/${data.transferId}`, 500);
+                } else {
+                    data.errors.forEach(error => notifications.notify('#c52337', error));
+                }
+            });
         }).catch(err => {
             console.error(err);
         });

@@ -1,0 +1,16 @@
+table a {
+    color: white;
+    font-family: monospace;
+}
+
+td, th {
+    padding: 8px;
+}
+
+thead {
+    background-color: #08c552;
+}
+
+tbody > tr:nth-child(2n) {
+    background-color: #333333;
+}

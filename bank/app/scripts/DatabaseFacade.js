@@ -47,10 +47,14 @@ class DatabaseFacade {
     }
 
     getUserTransfers(userId) {
-        return this.db['Transfer'].findAll({
-            where: {
-                [db.Sequelize.Op.or]: [{sender: userId}, {receiver: userId}]
-            }
+        return this.db.sequelize.query(`SELECT T.id, T.sender, T.receiver, T.amount, T.datetime, U.email as senderEmail, UU.email as receiverEmail FROM public."Transfers" T JOIN public."Users" U ON T.sender = U.id JOIN public."Users" UU on T.receiver = UU.id WHERE T.sender = :userId OR T.receiver = :userId`, {
+            replacements: {userId: userId}, type: this.db.Sequelize.QueryTypes.SELECT
+        });
+    }
+
+    getUserTransfer(userId, transferId) {
+        return this.db.sequelize.query(`SELECT T.id, T.sender, T.receiver, T.amount, T.datetime, U.email as senderEmail, UU.email as receiverEmail FROM public."Transfers" T JOIN public."Users" U ON T.sender = U.id JOIN public."Users" UU on T.receiver = UU.id WHERE (T.sender = :userId OR T.receiver = :userId) AND T.id = :transferId`, {
+            replacements: {userId: userId, transferId: transferId}, type: this.db.Sequelize.QueryTypes.SELECT
         });
     }
 
@@ -58,7 +62,8 @@ class DatabaseFacade {
         return this.db['Transfer'].create({
             sender: sender,
             receiver: receiver,
-            amount: amount
+            amount: amount,
+            datetime: new Date()
         });
     }
 }

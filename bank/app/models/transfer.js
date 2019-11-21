@@ -19,7 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         amount: {
             type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
             min: 0
+        },
+        datetime: {
+            type: DataTypes.DATE,
+            allowNull: false
         }
     }, {});
     Transfer.associate = function (models) {

@@ -8,12 +8,12 @@ const Authenticator = require('./scripts/Authenticator');
 const DatabaseFacade = require('./scripts/DatabaseFacade');
 
 const config = require('./config/appConfig');
-const db = new DatabaseFacade(require('./models/index'), crypto);
+const db = require('./models/index');
 const auth = new Authenticator(crypto);
 
 const refs = {
     config: config,
-    db: db,
+    db: new DatabaseFacade(db, crypto),
     auth: auth
 };
 
@@ -58,7 +58,7 @@ app.use('/account', accountRouter);
 
 const httpServer = http.createServer(app);
 
-refs.db.sequelize.authenticate()
+db.sequelize.authenticate()
     .then(() => {
         db.sequelize.sync();
         console.log('Connected to database');

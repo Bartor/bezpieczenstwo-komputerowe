@@ -3,13 +3,25 @@ extends templates/head
 block append links
     link(rel='stylesheet' href='/static/stylesheets/account.css')
 
-block append scripts
-    script(src='/static/js/account.js')
-
 block content
     main
         header
-            h1 Log in
-        ul
-            each transfer in transfers
-                li
+            h2 Balance: #{balance}
+            h2 Your transfers
+        table
+            thead
+                tr
+                    th(scope="col") ID
+                    th(scope="col") Sender
+                    th(scope="col") Receiver
+                    th(scope="col") Amount
+                    th(scope="col") Date time
+            tbody
+                each transfer in transfers
+                    tr
+                        td
+                            a(href=`/account/transfer/${transfer.id}`)= transfer.id
+                        td= transfer.senderemail
+                        td= transfer.receiveremail
+                        td= transfer.amount
+                        td= transfer.datetime.toLocaleString()

@@ -1,0 +1,23 @@
+extends templates/head
+
+block append links
+    link(rel='stylesheet' href='/static/stylesheets/transferDetails.css')
+
+block content
+    main
+        header
+            h2 Transfer #{transfer.id}
+        table
+            tbody
+                tr
+                    td Sender
+                    td= transfer.senderemail
+                tr
+                    td Receiver
+                    td= transfer.receiveremail
+                tr
+                    td Amount
+                    td= transfer.amount
+                tr
+                    td Datetime
+                    td= transfer.datetime.toLocaleString()

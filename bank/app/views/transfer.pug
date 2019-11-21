@@ -1,0 +1,19 @@
+extends templates/head
+
+block append links
+    link(rel='stylesheet' href='/static/stylesheets/transfer.css')
+
+block append scripts
+    script(src='/static/js/transfer.js')
+
+block content
+    main
+        header
+            h1 New transfer
+            form#transferForm
+                label Receiver's email
+                input(type='email', required=true)#email
+                label Amount
+                input(type='number', required=true, pattern="^\d+(?:\.\d{1,2})?$")#amount
+                button(type='submit') Send
+            footer
