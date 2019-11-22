@@ -6,12 +6,13 @@ block append links
 block content
     main
         header
-            h2 Balance: #{balance}
+            h2 Balance: #{balance.toFixed(2)}
             h2 Your transfers
         table
             thead
                 tr
                     th(scope="col") ID
+                    th(scope="col") Status
                     th(scope="col") Sender
                     th(scope="col") Receiver
                     th(scope="col") Amount
@@ -21,6 +22,7 @@ block content
                     tr
                         td
                             a(href=`/account/transfer/${transfer.id}`)= transfer.id
+                        td= transfer.status
                         td= transfer.senderemail
                         td= transfer.receiveremail
                         td= transfer.amount

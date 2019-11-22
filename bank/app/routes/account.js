@@ -5,7 +5,17 @@ module.exports = (router, refs) => {
                 title: 'Account - Banco Epico',
                 navLinks: refs.config.navLinks(req.authentication.passed),
                 transfers: transfers,
-                balance: transfers.reduce((acc, transfer) => transfer.sender === req.authentication.user ? acc - transfer.amount : acc - (-transfer.amount), 0)
+                balance: transfers.reduce((acc, transfer) => {
+                    if (transfer.status === 'accepted') {
+                        if (transfer.sender === req.authentication.user) {
+                            return acc - transfer.amount;
+                        } else {
+                            return acc + Number(transfer.amount);
+                        }
+                    } else {
+                        return acc;
+                    }
+                }, 0)
             });
         }).catch(err => {
             console.error(err);
@@ -57,19 +67,19 @@ module.exports = (router, refs) => {
                     res.json({transferId: transfer.id});
                 }).catch(err => {
                     console.error(err);
-                    res.status(500).json({error: 'There was an error when processing your request'});
+                    res.status(500).json({errors: ['There was an error when processing your request']});
                 });
             } else {
                 if (users.length) {
                     console.error('MULTIPLE RESULTS ON UNIQUE CONSTRAINTS WHAT');
-                    res.status(500).json({error: 'There was an error when processing your request'});
+                    res.status(500).json({errors: ['There was an error when processing your request']});
                 } else {
-                    res.status(400).json({error: 'There is no such user'});
+                    res.status(400).json({errors: ['There is no such user']});
                 }
             }
         }).catch(err => {
             console.error(err);
-            res.status(500).json({error: 'There was an error when processing your request'});
+            res.status(500).json({errors: ['There was an error when processing your request']});
         })
     });
 
@@ -79,7 +89,8 @@ module.exports = (router, refs) => {
                 res.render('transferDetails', {
                     title: 'Transfer details - Banco Epico',
                     navLinks: refs.config.navLinks(req.authentication.passed),
-                    transfer: transfers[0]
+                    transfer: transfers[0],
+                    canAccept: transfers[0].sender === req.authentication.user && transfers[0].status === 'pending'
                 });
             } else {
                 if (transfers.length) {
@@ -92,6 +103,29 @@ module.exports = (router, refs) => {
         }).catch(err => {
             console.error(err);
             res.status(500).json({error: 'There was an error when processing your request'});
+        });
+    });
+
+    router.get('/transfer/:id/cancel', (req, res) => {
+        refs.db.cancelTransfer(req.authentication.user, req.params.id).then(data => {
+            if (data.length) {
+                res.json({});
+            } else {
+                res.status(400).json({errors: ['There is no such transfer']});
+            }
+        }).catch(err => {
+            console.error(err);
+            res.status(500).json({errors: ['There was an error when processing your request']});
+        });
+    });
+
+    router.get('/transfer/:id/accept', (req, res) => {
+        refs.db.acceptTransfer(req.authentication.user, req.params.id).then(data => {
+            console.log(data);
+            res.json({});
+        }).catch(err => {
+            console.error(err);
+            res.status(500).json({errors: ['There was an error when processing your request']});
         });
     });
 

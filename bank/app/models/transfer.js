@@ -25,6 +25,12 @@ module.exports = (sequelize, DataTypes) => {
         datetime: {
             type: DataTypes.DATE,
             allowNull: false
+        },
+        status: {
+            type: DataTypes.ENUM,
+            values: ['accepted', 'cancelled', 'pending'],
+            defaultValue: 'pending',
+            allowNull: false
         }
     }, {});
     Transfer.associate = function (models) {

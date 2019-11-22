@@ -3,6 +3,9 @@ extends templates/head
 block append links
     link(rel='stylesheet' href='/static/stylesheets/transferDetails.css')
 
+block append scripts
+    script(src='/static/js/transferDetails.js')
+
 block content
     main
         header
@@ -21,3 +24,8 @@ block content
                 tr
                     td Datetime
                     td= transfer.datetime.toLocaleString()
+        if canAccept
+            div
+                button#accept Accept transfer
+                button#cancel Cancel transfer
+        footer

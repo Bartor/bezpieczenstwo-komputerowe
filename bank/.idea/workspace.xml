@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3595eaa1-046c-482b-a57f-a83c7ef0429d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/transfer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/stylesheets/transferDetails.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/transfer.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/transferDetails.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/js/transferDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/transfer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scripts/DatabaseFacade.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/DatabaseFacade.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/transfer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/stylesheets/transferDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/stylesheets/transferDetails.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/account.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/account.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/transferDetails.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/transferDetails.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Pug File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -103,7 +96,8 @@
       <workItem from="1573720574213" duration="11131000" />
       <workItem from="1573813408814" duration="2421000" />
       <workItem from="1574157161411" duration="32000" />
-      <workItem from="1574323233244" duration="8089000" />
+      <workItem from="1574323233244" duration="8136000" />
+      <workItem from="1574415969439" duration="4161000" />
     </task>
     <task id="LOCAL-00001" summary="podstawowa struktura projektu">
       <created>1573558945700</created>
@@ -147,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573659005148</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="działające transfery">
+      <created>1574332135504</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574332135505</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +174,7 @@
     <MESSAGE value="poprawka depends_on compose'a" />
     <MESSAGE value="działające tworzenie konta" />
     <MESSAGE value="dodano todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodano todo" />
+    <MESSAGE value="działające transfery" />
+    <option name="LAST_COMMIT_MESSAGE" value="działające transfery" />
   </component>
 </project>
