@@ -24,6 +24,8 @@ window.addEventListener('load', () => {
         }
     };
 
-    document.getElementById('accept').addEventListener('click', updateTransferStatus(true));
-    document.getElementById('cancel').addEventListener('click', updateTransferStatus(false));
+    if (document.getElementById('accept')) {
+        document.getElementById('accept').addEventListener('click', updateTransferStatus(true));
+        document.getElementById('cancel').addEventListener('click', updateTransferStatus(false));    
+    }
 });
