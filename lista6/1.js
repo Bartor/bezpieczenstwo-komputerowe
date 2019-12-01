@@ -43,27 +43,54 @@ for (let i = 0; i < cryptograms.length; i++) {
         possibleSpaces.push(possibleSpacesWithB);
     }
 
-    let intersection = possibleSpaces.reduce((acc, withB) => acc.filter(e => withB.indexOf(e) !== -1), possibleSpaces[0]);
-    spacesIntersections.push(intersection ? intersection : []);
+    let localIntersectionLevels = [];
+    let startingSpaces = possibleSpaces[0];
+    for (let j = 1; j < possibleSpaces.length; j++) {
+        localIntersectionLevels.push([...startingSpaces]);
+        startingSpaces = startingSpaces.filter(e => possibleSpaces[j].indexOf(e) !== -1);
+    }
+    spacesIntersections.push(localIntersectionLevels.reverse());
 }
 
 let secretKey = [];
-for (let i = 0; i < spacesIntersections.length; i++) {
-    for (let j = 0; j < spacesIntersections[i].length; j++) {
-        secretKey[spacesIntersections[i][j]] = stringXOR(charToBinary(' '), cryptograms[i][spacesIntersections[i][j]]);
+let level = 0;
+let levelFlag = true;
+while(levelFlag) {
+    levelFlag = false;
+    for (let i = 0; i < spacesIntersections.length; i++) {
+        let spaceIntersectionLevels = spacesIntersections[i];
+        if (level > spaceIntersectionLevels.length - 1) {
+            continue;
+        } else {
+            levelFlag = true;
+        }
+
+        let currentLevel = spaceIntersectionLevels[level];
+
+        for (let j = 0; j < currentLevel.length; j++) {
+            if (!secretKey[currentLevel[j]]) {
+                secretKey[currentLevel[j]] = stringXOR(charToBinary(' '), cryptograms[i][currentLevel[j]]);
+            }
+        }
     }
+    level++;
 }
 
 console.log(`DECODED SECRET KEY: ${[...secretKey].map(e => e ? e : '________').join('|')}`);
 for (let i = 0; i < cryptograms.length; i++) {
     let decipheredCryptogram = [];
-    for (let j = 0; j < secretKey.length; j++) {
+    for (let j = 0; j < cryptograms[i].length; j++) {
         if (secretKey[j]) {
-            decipheredCryptogram[j] = stringXOR(secretKey[j], cryptograms[i][j]);
+            let xored = stringXOR(secretKey[j], cryptograms[i][j])
+            if (letters.test(binaryToChar(xored)) || binaryToChar(xored) === ' ') {
+                decipheredCryptogram[j] = stringXOR(secretKey[j], cryptograms[i][j]);
+            } else {
+                decipheredCryptogram[j] = charToBinary('_');
+            }
         } else {
             decipheredCryptogram[j] = charToBinary('_');
         }
     }
 
-    console.log(decipheredCryptogram.map(char => binaryToChar(char)).join(''));
+    console.log(decipheredCryptogram.map(char => binaryToChar(char)).join('') + '\n');
 }
