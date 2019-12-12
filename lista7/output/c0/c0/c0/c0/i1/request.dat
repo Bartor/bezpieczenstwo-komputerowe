@@ -1,0 +1,9 @@
+GET /account/transfer/5a7e456c-66c7-4ba9-a1a0-a06f18ed3611/ HTTP/1.1
+Host: localhost
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Mozilla/5.0 SF/2.10b
+Range: bytes=0-399999
+Referer: http://localhost/
+Cookie: token=-->">'>'"<sfi000079v086970>
+

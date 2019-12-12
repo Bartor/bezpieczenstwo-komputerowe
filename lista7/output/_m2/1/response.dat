@@ -1,0 +1,28 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"be-16e9d7f9330"
+Content-Type: text/css; charset=UTF-8
+Content-Range: bytes 0-189/190
+Content-Length: 190
+Date: Thu, 12 Dec 2019 12:22:27 GMT
+Connection: keep-alive
+
+table a {
+    color: white;
+    font-family: monospace;
+}
+
+td, th {
+    padding: 8px;
+}
+
+thead {
+    background-color: #08c552;
+}
+
+tbody > tr:nth-child(2n) {
+    background-color: #333333;
+}

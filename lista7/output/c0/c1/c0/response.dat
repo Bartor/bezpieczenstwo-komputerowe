@@ -1,0 +1,19 @@
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 149
+Date: Thu, 12 Dec 2019 12:22:26 GMT
+Connection: keep-alive
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /static/js/</pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"484-16e9d7f9330"
+Content-Type: application/javascript; charset=UTF-8
+Content-Range: bytes 0-1155/1156
+Content-Length: 1156
+Date: Thu, 12 Dec 2019 12:24:22 GMT
+Connection: keep-alive
+
+window.addEventListener('load', () => {
+    const footer = document.querySelector('footer');
+    const notifications = new Notification(footer, 5);
+
+    document.getElementById('transferForm').addEventListener('submit', event => {
+        event.preventDefault();
+
+        let response = {};
+        for (let element of event.target) {
+            response[element.id] = element.value;
+        }
+
+        fetch('/account/transfer',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(response)
+            }).then(response => {
+            response.json().then(data => {
+                if (response.status === 200) {
+                    notifications.notify('#08c552', 'Transfer successful');
+                    setTimeout(() => window.location = `/account/transfer/${data.transferId}`, 500);
+                } else {
+                    data.errors.forEach(error => notifications.notify('#c52337', error));
+                }
+            });
+        }).catch(err => {
+            console.error(err);
+        });
+    });
+});

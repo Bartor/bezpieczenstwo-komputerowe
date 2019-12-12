@@ -1,0 +1,18 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"63-16e9d7f9330"
+Content-Type: text/css; charset=UTF-8
+Content-Range: bytes 0-98/99
+Content-Length: 99
+Date: Thu, 12 Dec 2019 12:24:22 GMT
+Connection: keep-alive
+
+main {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}73V

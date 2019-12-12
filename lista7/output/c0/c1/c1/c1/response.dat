@@ -1,0 +1,37 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"1a2-16e9d7f9330"
+Content-Type: text/css; charset=UTF-8
+Content-Range: bytes 0-417/418
+Content-Length: 418
+Date: Thu, 12 Dec 2019 12:24:22 GMT
+Connection: keep-alive
+
+nav {
+    width: 66%;
+    padding: 24px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    font-size: 4em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+nav > div > a {
+    margin: 12px;
+}
+
+nav > a > span {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--accent);
+}

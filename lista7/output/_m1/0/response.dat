@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 741
+ETag: W/"2e5-aAYmxAy5k62E77sNomp4Rsgp5rI"
+Date: Thu, 12 Dec 2019 12:22:24 GMT
+Connection: keep-alive
+
+<!DOCTYPE html><head><title>Homepage - Banco Epico</title><link rel="stylesheet" href="/static/stylesheets/main.css"><link rel="stylesheet" href="/static/stylesheets/header.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz&amp;display=swap"><link rel="stylesheet" href="/static/stylesheets/index.css"><script src="/static/js/modules/Notification.js"></script></head><body><nav><a href="/">Banco<span>Epico</span></a><div><a class="link" href="/account">Account</a><a class="link" href="/account/transfer">Transfer</a><a class="link" href="/account/logout">Logout</a></div></nav><main><header><h1>Most secure banking solution</h1><h1 class="accent">on the Internet.</h1></header></main></body>
