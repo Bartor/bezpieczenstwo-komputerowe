@@ -1,0 +1,46 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"1b5-16e9d7f9330"
+Content-Type: text/css; charset=UTF-8
+Content-Range: bytes 0-436/437
+Content-Length: 437
+Date: Fri, 13 Dec 2019 21:24:47 GMT
+Connection: keep-alive
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+tbody > tr > td:nth-child(1) {
+    font-weight: bold;
+}
+
+td, th {
+    padding: 8px;
+}
+
+thead {
+    background-color: #08c552;
+}
+
+tbody > tr:nth-child(2n) {
+    background-color: #333333;
+}
+
+button {
+    margin: 8px;
+}
+
+footer {
+    margin: 24px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

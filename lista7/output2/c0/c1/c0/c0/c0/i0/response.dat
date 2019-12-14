@@ -1,0 +1,39 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"3ae-16e9d7f9330"
+Content-Type: application/javascript; charset=UTF-8
+Content-Range: bytes 0-941/942
+Content-Length: 942
+Date: Fri, 13 Dec 2019 21:43:40 GMT
+Connection: keep-alive
+
+class Notification {
+    constructor(parent, timeout = 5, transitionTime = 0.2) {
+        this.transitionTime = transitionTime;
+        this.timeout = timeout;
+        this.parent = parent;
+    }
+
+    notify(color, message, cb) {
+        let element = document.createElement('p');
+        element.style.margin = '8px';
+        element.style.padding = '8px';
+        element.style.transition = `transform ${this.transitionTime}s`;
+        element.style.transform = 'scale(0)';
+        element.style.backgroundColor = color;
+
+        element.textContent = message;
+        this.parent.append(element);
+        requestAnimationFrame(() => element.style.transform = 'scale(1)');
+        setTimeout(() => {
+            element.style.transform = 'scale(0)';
+            setTimeout(() => {
+                this.parent.removeChild(element);
+                if (cb) cb();
+            }, this.transitionTime*1000);
+        },this.timeout*1000);
+    }
+}

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 1035
+ETag: W/"40b-v+pawb/ZGxndtDc+zm996PCKqsA"
+Date: Fri, 13 Dec 2019 21:05:21 GMT
+Connection: keep-alive
+
+<!DOCTYPE html><head><title>Transfer details - Banco Epico</title><link rel="stylesheet" href="/static/stylesheets/main.css"><link rel="stylesheet" href="/static/stylesheets/header.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz&amp;display=swap"><link rel="stylesheet" href="/static/stylesheets/transferDetails.css"><script src="/static/js/modules/Notification.js"></script><script src="/static/js/transferDetails.js"></script></head><body><nav><a href="/">Banco<span>Epico</span></a><div><a class="link" href="/account">Account</a><a class="link" href="/account/transfer">Transfer</a><a class="link" href="/account/logout">Logout</a></div></nav><main><header><h2>Transfer 8c9ba5e1-dc39-44ef-9ce0-09852ca907d0</h2></header><table><tbody><tr><td>Sender</td><td>bartorkrajczyk@gmail.com</td></tr><tr><td>Receiver</td><td>bad@guy.net</td></tr><tr><td>Amount</td><td>123.00</td></tr><tr><td>Datetime</td><td>11/24/2019, 1:19:09 PM</td></tr></tbody></table><footer></footer></main></body>_÷-V

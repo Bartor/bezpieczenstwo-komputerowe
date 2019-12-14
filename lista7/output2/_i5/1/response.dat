@@ -1,0 +1,10 @@
+HTTP/1.1 302 Found
+X-Powered-By: Express
+Location: /account
+Vary: Accept
+Content-Type: text/plain; charset=utf-8
+Content-Length: 30
+Date: Fri, 13 Dec 2019 21:45:44 GMT
+Connection: keep-alive
+
+Found. Redirecting to /account

@@ -1,0 +1,9 @@
+GET / HTTP/1.1
+Host: localhost
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Mozilla/5.0 SF/2.10b
+Range: bytes=0-399999
+Referer: http://localhost/
+Cookie: token=19df918ac6772e154989cc5eebe35c51b26f724c18f5224c2bc40b577132653cf5927f7a79ead5b39c96720cef105fe9f8daecf8d2d43f71eec7ca701524fdd3
+

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 1039
+ETag: W/"40f-jn71RAqkix/8JDOBuI18nWTd6ws"
+Date: Fri, 13 Dec 2019 21:05:21 GMT
+Connection: keep-alive
+
+<!DOCTYPE html><head><title>Transfer details - Banco Epico</title><link rel="stylesheet" href="/static/stylesheets/main.css"><link rel="stylesheet" href="/static/stylesheets/header.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Yanone+Kaffeesatz&amp;display=swap"><link rel="stylesheet" href="/static/stylesheets/transferDetails.css"><script src="/static/js/modules/Notification.js"></script><script src="/static/js/transferDetails.js"></script></head><body><nav><a href="/">Banco<span>Epico</span></a><div><a class="link" href="/account">Account</a><a class="link" href="/account/transfer">Transfer</a><a class="link" href="/account/logout">Logout</a></div></nav><main><header><h2>Transfer 9b9670ee-ec79-4e57-8d0f-c12c5119dd87</h2></header><table><tbody><tr><td>Sender</td><td>bartorkrajczyk@gmail.com</td></tr><tr><td>Receiver</td><td>adolf@hilter.de</td></tr><tr><td>Amount</td><td>123.00</td></tr><tr><td>Datetime</td><td>11/24/2019, 6:38:14 PM</td></tr></tbody></table><footer></footer></main></body>

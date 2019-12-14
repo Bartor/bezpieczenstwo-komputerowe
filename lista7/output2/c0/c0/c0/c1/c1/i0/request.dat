@@ -1,0 +1,9 @@
+GET /account/transfer/1b348ad3-1c76-478f-b2e8-43a8c20d6155/cancel/ HTTP/1.1
+Host: localhost
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Mozilla/5.0 SF/2.10b
+Range: bytes=0-399999
+Referer: http://localhost/
+Cookie: token=-->">'>'"<sfi000124v815015>
+

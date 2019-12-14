@@ -1,0 +1,19 @@
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 200
+Date: Fri, 13 Dec 2019 21:05:21 GMT
+Connection: keep-alive
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /account/transfer/7bc4597b-69f0-40f5-83f9-6769fe06682d/sfi9876</pre>
+</body>
+</html>

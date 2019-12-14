@@ -1,0 +1,85 @@
+HTTP/1.1 200 Partial Content
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 24 Nov 2019 13:00:14 GMT
+ETag: W/"3ef-16e9d7f9330"
+Content-Type: text/css; charset=UTF-8
+Content-Range: bytes 0-1006/1007
+Content-Length: 1007
+Date: Fri, 13 Dec 2019 21:24:47 GMT
+Connection: keep-alive
+
+:root {
+    --accent: #08c552;
+    --accent-dark: #087136;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #222222;
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+a:visited {
+    color: white;
+}
+
+a.link, button {
+    border: 0;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    transition: color,background-color 0.1s;
+}
+
+a.link:hover, button:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: var(--accent-dark);
+}
+
+input {
+    padding: 12px;
+    border: 0;
+}
+
+.accent {
+    color: var(--accent);
+}
