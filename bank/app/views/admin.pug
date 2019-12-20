@@ -6,8 +6,7 @@ block append links
 block content
     main
         header
-            h2 Balance: #{balance.toFixed(2)}
-            h2 Your transfers
+            h2 Admin panel
         table
             thead
                 tr
@@ -22,10 +21,10 @@ block content
                 each transfer in transfers
                     tr
                         td
-                            a(href=`/account/transfer/${transfer.id}`)= transfer.id
+                            a(href=`/admin/transfer/${transfer.id}`)= transfer.id
                         td= transfer.status
-                        td= transfer.senderemail
-                        td= transfer.receiveremail
+                        td= transfer.sender
+                        td= transfer.receiver
                         // UNESCAPED BUFFERED CODE - INSECURE, ALLOWS TO TEST XSS
                         td!= transfer.title
                         td= transfer.amount

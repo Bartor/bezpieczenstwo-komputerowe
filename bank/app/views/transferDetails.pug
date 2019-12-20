@@ -14,10 +14,20 @@ block content
             tbody
                 tr
                     td Sender
-                    td= transfer.senderemail
+                    if admin
+                        td= transfer.sender
+                    else
+                        td= transfer.senderemail
                 tr
                     td Receiver
-                    td= transfer.receiveremail
+                    if admin
+                        td= transfer.receiver
+                    else
+                        td= transfer.receiveremail
+                tr
+                    td Title
+                    // UNESCAPED BUFFERED CODE - INSECURE, ALLOWS TO TEST XSS
+                    td!= transfer.title
                 tr
                     td Amount
                     td= transfer.amount

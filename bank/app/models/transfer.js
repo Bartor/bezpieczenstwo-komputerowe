@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             defaultValue: uuidv4,
         },
+        title: {
+            type: DataTypes.STRING(128),
+            allowNull: false,
+            defaultValue: 'Transfer'
+        },
         sender: {
             type: DataTypes.UUID,
             allowNull: false

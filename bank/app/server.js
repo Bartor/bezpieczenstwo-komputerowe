@@ -20,6 +20,7 @@ const refs = {
 const indexRouter = require('./routes/index')(express.Router(), refs);
 const accountRouter = require('./routes/account')(express.Router(), refs);
 const loginRouter = require('./routes/login')(express.Router(), refs);
+const adminRouter = require('./routes/admin')(express.Router(), refs);
 
 const app = express();
 
@@ -40,7 +41,9 @@ app.use((req, res, next) => { // authentication
         req.authentication = auth.authorize(req.cookies.token);
     } else {
         req.authentication = {
-            passed: false
+            passed: false,
+            admin: false,
+            user: null
         };
     }
     next();
@@ -55,6 +58,7 @@ app.use((req, res, next) => {
     }
 });
 app.use('/account', accountRouter);
+app.use('/admin', adminRouter);
 
 const httpServer = http.createServer(app);
 

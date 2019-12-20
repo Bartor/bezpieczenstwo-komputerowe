@@ -13,6 +13,8 @@ block content
             form#transferForm
                 label Receiver's email
                 input(type='email', required=true)#email
+                label Title
+                input(type='text')#title
                 label Amount
                 input(type='number', required=true, pattern="^\d+(?:\.\d{1,2})?$")#amount
                 button(type='submit') Send

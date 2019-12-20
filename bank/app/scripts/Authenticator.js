@@ -4,7 +4,7 @@ class Authenticator {
         this.authenticated = {};
     }
 
-    authenticate(user, timeout) {
+    authenticate(user, timeout, admin) {
         let token = this.crypto.randomFillSync(Buffer.alloc(64)).toString('hex');
         while (this.authenticated[token]) {
             token = this.crypto.randomFillSync(Buffer.alloc(64)).toString('hex');
@@ -12,7 +12,8 @@ class Authenticator {
         this.authenticated[token] = {
             timestamp: Date.now(),
             timeout: timeout * 1000,
-            user: user
+            user: user,
+            admin: admin
         };
         return token;
     }
@@ -24,12 +25,14 @@ class Authenticator {
             delete this.authenticated[token];
             return {
                 passed: false,
-                user: null
+                user: null,
+                admin: false
             };
         } else {
             return {
                 passed: true,
-                user: storedUser.user
+                user: storedUser.user,
+                admin: storedUser.admin
             };
         }
     }

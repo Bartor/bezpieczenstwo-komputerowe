@@ -29,7 +29,7 @@ module.exports = (router, refs) => {
 
         refs.db.verifyUser(email, password).then(id => {
             if (id) {
-                const token = refs.auth.authenticate(id, refs.config.tokenTimeout);
+                const token = refs.auth.authenticate(id, refs.config.tokenTimeout, email === refs.config.adminAccount);
                 res.cookie('token', token);
                 res.json({token: token});
             } else {

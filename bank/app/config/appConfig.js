@@ -22,5 +22,6 @@ module.exports = {
             url: '/login/register'
         }
     ],
-    tokenTimeout: 3600
+    tokenTimeout: 3600,
+    adminAccount: 'admin@example.com'
 };

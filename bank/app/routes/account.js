@@ -63,8 +63,10 @@ module.exports = (router, refs) => {
                     return;
                 }
 
-                refs.db.newTransfer(req.authentication.user, receiver, req.body.amount).then(transfer => {
-                    res.json({transferId: transfer.id});
+                // another stupid piece of code to allow sql injections
+                let t = refs.db.newTransfer(req.authentication.user, receiver, req.body.amount, req.body.title);
+                t.query.then(insertResults => {
+                    res.json({transferId: t.id});
                 }).catch(err => {
                     console.error(err);
                     res.status(500).json({errors: ['There was an error when processing your request']});
@@ -107,7 +109,7 @@ module.exports = (router, refs) => {
     });
 
     router.get('/transfer/:id/cancel', (req, res) => {
-        refs.db.cancelTransfer(req.authentication.user, req.params.id).then(data => {
+        refs.db.cancelTransfer(req.authentication.user, req.params.id, req.authentication.admin).then(data => {
             if (data.length) {
                 res.json({});
             } else {
@@ -120,9 +122,12 @@ module.exports = (router, refs) => {
     });
 
     router.get('/transfer/:id/accept', (req, res) => {
-        refs.db.acceptTransfer(req.authentication.user, req.params.id).then(data => {
-            console.log(data);
-            res.json({});
+        refs.db.acceptTransfer(req.authentication.user, req.params.id, req.authentication.admin).then(data => {
+            if (data.length) {
+                res.json({});
+            } else {
+                res.status(400).json({errors: ['There is no such transfer']});
+            }
         }).catch(err => {
             console.error(err);
             res.status(500).json({errors: ['There was an error when processing your request']});
