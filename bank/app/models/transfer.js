@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: uuidv4,
         },
         title: {
-            type: DataTypes.STRING(128),
+            type: DataTypes.STRING(1024), // long to allow for xss
             allowNull: false,
             defaultValue: 'Transfer'
         },

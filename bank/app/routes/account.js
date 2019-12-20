@@ -86,8 +86,10 @@ module.exports = (router, refs) => {
     });
 
     router.get('/transfer/:id', (req, res) => {
-        refs.db.getUserTransfer(req.authentication.user, req.params.id).then(transfers => {
-            if (transfers.length === 1) {
+        refs.db.getTransfer(req.params.id).then(transfers => { // allow for sql injection
+        // refs.db.getUserTransfer(req.authentication.user, req.params.id).then(transfers => { // correct!
+            if (transfers.length) { // allow for sql injection
+            // if (transfers.length === 1) { // correct!
                 res.render('transferDetails', {
                     title: 'Transfer details - Banco Epico',
                     navLinks: refs.config.navLinks(req.authentication.passed),

@@ -93,11 +93,17 @@ class DatabaseFacade {
     }
 
     getTransfer(transferId) {
+        return this.db.sequelize.query(`SELECT  T.id, T.title, T.status, T.sender, T.receiver, T.amount, T.datetime, U.email as senderEmail, UU.email as receiverEmail FROM public."Transfers" T JOIN public."Users" U ON T.sender = U.id JOIN public."Users" UU on T.receiver = UU.id WHERE T.id = '${transferId}'`, {
+            type: this.db.Sequelize.QueryTypes.SELECT
+        });
+
+        /* correct
         return this.db['Transfer'].findAll({
             where: {
                 id: transferId
             }
         });
+        */
     }
 
     newTransfer(sender, receiver, amount, title) {
